@@ -1,0 +1,1095 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-transition: 0.3s ease;
+    --sec-padding: 50px;
+    --dark-grey: #333;
+    --light-grey: #777;
+    --light-blue: #19c8fa;
+    --overlay-color: rgb(15 116 143 / 70%);
+    --main-transition: 0.3s ease;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hero{
+    height: 100vh;
+    background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+.hero::before, .hero::after{
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    border: 5px solid;
+    border-color: transparent #fff #fff transparent;
+    position: absolute;
+    top: 50%;
+}
+
+.hero::before{
+    transform: translateY(-50%) rotate(-45deg);
+    right: 40px;
+}
+
+.hero::after{
+    transform: translateY(-50%) rotate(135deg);
+    left: 40px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 85%;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.logo{
+    width: 130px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
+}
+
+nav ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    height: 100%;
+    margin-bottom: -1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--main-transition);
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: var(--main-transition);
+}
+
+nav ul li:not(:last-of-type):hover, nav ul .active{
+    border-bottom: 1px solid #10cab7;
+}
+
+nav ul li:hover a, .active a{
+    color: #10cab7;
+}
+
+nav ul li:last-of-type{
+    color: #fff;
+    height: 40px;
+    font-size: 1.2rem;
+    border-left: 1px solid white;
+    border-bottom: none;
+    margin-left: 10px;
+}
+
+.menu{
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu span{
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 4px;
+}
+
+.cont{
+    position: relative;
+}
+.hero-div{
+    position: absolute;
+    width: 50%;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 50px 50px 100px;
+    background-color: var(--overlay-color);
+    color: #fff;
+    line-height: 1.7;
+}
+
+.hero-div h2{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hero-div p{
+    font-size: 0.95rem;
+}
+
+.hero .dots{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dots span{
+    display: inline-block;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.dots span:nth-of-type(2){
+    border: none;
+    background-color: #10cab7;
+}
+
+.scroll-top{
+    position: fixed;
+    display: inline-block;
+    right: 3%;
+    bottom: 5%;
+    width: 40px;
+    height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgba(16, 202, 183, 0.8);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 0.9rem;
+    z-index: 999;
+    text-decoration: none;
+}
+
+/* *Service Section */
+
+.services{
+    padding: var(--sec-padding);
+}
+.title{
+    text-align: center;
+    padding: 0 50px 70px 50px;
+}
+
+.title h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.title span::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 2px solid var(--dark-grey);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.title span{
+    display: inline-block;
+    width: 115px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--dark-grey);
+    margin: 25px 0;
+    position: relative;
+}
+
+.title p{
+    line-height: 2;
+    color: var(--light-grey);
+}
+
+.services .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.content .cell{
+    margin: 10px;
+    flex-basis: calc(50% - 20px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.cell i{
+    padding-right: 50px;
+}
+.cell h3{
+    margin-bottom:  30px;
+    color: var(--light-blue);
+}
+
+.cell p{
+    line-height: 2;
+    color: var(--light-grey);
+}
+
+
+/* *Features Section */
+
+.features{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/design-features.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 90vh;
+    z-index: -1;
+}
+
+.features img{
+    width: 320px;
+    left: 8%;
+    bottom: -20%;
+    position: absolute;
+}
+
+.features .overlay{
+    width: 55%;
+    position: absolute;
+    display: block;
+    padding: 50px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: var(--overlay-color) ;
+}
+
+.features .overlay h2{
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.features ul li{
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+
+.features ul li::before{
+    content: '\e163';
+    font-family: "Font Awesome 5 Free";
+    font-weight:900;
+    margin-right: 15px;
+}
+
+
+/* *Portfolio Section */
+
+.portfolio{
+    background-color: #fff;
+    padding: var(--sec-padding) 0;
+    z-index: 1;
+}
+
+.portfolio ul{
+    list-style-type: none;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.portfolio ul li{
+    padding: 8px 10px;
+}
+
+.portfolio ul .active{
+    background-color: #10cab7;
+    color: white;
+}
+
+.portfolio .images{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio .images > div{
+    width: calc(100% / 4);
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio .images .overlay{
+    width: 100%;
+    height: 40%;
+    transform: translateY(100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 15px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    transition: var(--main-transition);
+}
+
+.portfolio .images > div:hover .overlay{
+    transform: translateY(0);
+}
+
+.portfolio .images h4{
+    margin-bottom: 0.7rem;
+    font-weight: 500;
+}
+
+.portfolio .images h4:last-of-type{
+    color: var(--light-blue);
+}
+
+.portfolio .images img{
+    width: 100%;
+    margin-bottom: 2px;
+    transition: var(--main-transition);
+}
+
+.portfolio .images div:hover img{
+    transform: rotate(4deg) scale(1.11);
+}
+
+.portfolio .images a{
+    color: #fff;
+    background-color: var(--light-blue);
+    text-align: center;
+    padding: 15px 20px;
+    margin: 30px auto;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* *Video Section */
+.video{
+    position: relative;
+}
+
+.video video{
+    width: 100%;
+}
+
+.video::after{
+    content: '';
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.video .text{
+    display: block;
+    text-align: center;
+    background-color: var(--overlay-color);
+    position: absolute;
+    width: 100%;
+    padding: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 1;
+}
+
+.video .text h2{
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.video .text h5{
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 30px ;
+    text-transform: capitalize;
+}
+
+.video .text a{
+    color: #fff;
+    background-color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* *About Section */
+
+.about{
+    padding: 50px 0;
+    position: relative;
+}
+
+.about .image{
+    width: 100%;
+    margin: 0 auto;
+}
+.about-img{
+    width: 60%;
+    margin-top: -60px;
+    position: relative;
+    bottom: -115px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.stats{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/stats.png);
+    width: 100%;
+    padding: 70px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats .content{
+    background-color: var(--overlay-color);
+    width: 80%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .box{
+    text-align: center;
+    width: 25%;
+}
+
+.box i{
+    background-color: #000;
+    color: white;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.box .text{
+    color: #fff;
+}
+
+.box h4{
+    margin: 20px 0;
+    font-size: 2.8rem;
+}
+
+.box span{
+    font-size: 1rem;
+}
+
+.cols{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+}
+
+.cols .col{
+    margin-bottom: 30px;
+    padding: 10px;
+    width: calc(( 100% / 2 ) - 20px);
+}
+
+.col h2{
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.col p{
+    font-size: 1rem;
+    color: #777;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+.skill-box{    
+    padding: 0 20px;
+}
+
+.skill-box .row{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.row .img{
+    width: 180px;
+    margin-right: 30px;
+}
+
+.img img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.row .text{
+    border-bottom: 1px solid #777;
+}
+.row .text p{
+    color: #000;
+}
+.row .text span{
+    display: block;
+    text-align: right;
+    color: #777;
+    font-size: 0.89em;
+    margin-bottom: 10px;
+}
+
+.col .dots span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #777;
+}
+
+.col .dots span:nth-of-type(2){
+    border: none;
+}
+
+.col  ul{
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
+    list-style-type: none;
+}
+
+.col ul li{
+    margin-bottom: 25px;
+}
+.col ul li > span{
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-color: #DEDADC;
+    margin-top: 10px;
+    position: relative;
+}
+
+.col ul li .prog{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #19c8fa;
+    height: 100%;
+    width: 50%;
+}
+
+.prog::before{
+    text-align: center;
+    line-height: 25px;
+    font-size: 1rem;
+    position: absolute;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+    background-color: black;
+    color: white;
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.prog::after{
+    content: '';
+    position: absolute;
+    top: -13px;
+    right: 0;
+    transform: translateX(50%);
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: black transparent transparent transparent;
+}
+
+.col ul li:nth-of-type(1) .prog::before{
+    content: '90%';
+}
+
+.col ul li:nth-of-type(2) .prog::before{
+    content: '85%';
+}
+
+.col ul li:nth-of-type(3) .prog::before{
+    content: '80%';
+}
+
+.col ul li:nth-of-type(4) .prog::before{
+    content: '90%';
+}
+
+.col ul li:nth-of-type(1) .prog{
+    width: 90%;
+}
+
+.col ul li:nth-of-type(2) .prog{
+    width: 85%;
+}
+
+.col ul li:nth-of-type(3) .prog{
+    width: 80%;
+}
+
+.col ul li:nth-of-type(4) .prog{
+    width: 90%;
+}
+
+
+/* *Quote */
+
+.quote{
+    text-align: center;
+    background-image:linear-gradient(to right, rgba(0,0,0, 0.7), rgba(0,0,0, 0.8)), url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/quote.jpg);
+    background-size: cover;
+    background-position: top;
+    padding: 70px 50px;
+    color: #fff;
+}
+
+q{
+    font-size: 1.9rem;
+    display: block;
+}
+
+.quote span{
+    display: inline-block;
+    font-size: 1.1rem;
+    margin-top: 25px;
+
+}
+
+/* *Pricing */
+
+.pricing{
+    padding: var(--sec-padding);
+
+}
+
+.price-cont{
+    display: flex;
+    padding: 0 50px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.price-cont .price-card{
+    flex: 1;
+    margin: 0 15px ;
+    margin-bottom: 30px;
+}
+
+.price-card ul li{
+    padding: 20px;
+    list-style-type: none;
+    width: 70%;
+    white-space: nowrap;
+    margin: auto;
+    border-bottom: 1px solid #19c8fa;
+}
+
+.price-card ul li:first-of-type, .price-card ul li:last-of-type{
+    padding: 45px;
+    border: 1px solid;
+    border-color: #19c8fa transparent;
+    width: 100%;
+}
+
+.price-card ul li:last-of-type,
+.price-card ul li:nth-last-of-type(2){
+    border-bottom: none;
+}
+
+.price-card span{
+    display: block;
+    padding-bottom: 20px;
+
+}
+
+.price-card span:first-of-type{
+ font-size: 1.4rem;
+}
+
+.price-card span:last-of-type{
+    font-size: 3.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.price-card sup, .price-card sub{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.price-card a{
+    padding: 20px 25px;
+    border: 1px solid #19c8fa;
+    text-decoration: none;
+    color: #000;
+}
+
+.price-contact{
+    text-align: center;
+}
+
+.price-contact h3{
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.price-contact a{
+    background-color: #19c8fa;
+    padding: 15px 30px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* *Subscribe */
+
+.subscribe{
+    background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+    background-size: cover;
+}
+
+.sub-cont{
+    width: 85%;
+    margin: 0 auto;
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.email{
+    width: 40%;
+    height: 50px;
+    display: flex;
+    border: 1px solid #fff;
+}
+
+.email input{
+    width: 75%;
+    height: 100%;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.email input::placeholder{
+    color: #fff;
+    font-size: 1rem;
+}
+
+.email a{
+    text-align: center;
+    line-height: 50px;
+    width: 25%;
+    height: 100%;
+    background-color: #10cab7;
+    text-decoration: none;
+    color: #fff;
+}
+
+.sub-cont p{
+    color: #fff;
+    width: 50%;
+    line-height: 2;
+    
+}
+
+/* *Contact */
+
+.contact{
+    padding: var(--sec-padding);
+}
+
+.contact .content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+form{
+    width: 70%;
+    position: relative;
+}
+form input, form textarea{
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    outline: none;
+    padding-left: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.247);
+}
+
+form textarea{
+    padding-top: 10px;
+    resize: none; 
+    height: 200px;
+}
+
+form a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    background-color: #10cab7;
+    padding: 15px 20px;
+    float: right;
+}
+
+.contact .content .text{
+    width: 20%;
+}
+
+.text-row{
+    height: 50%;
+    text-align: left;
+}
+
+.text-row h3{
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.text-row h4{
+    line-height: 2;
+    font-weight: 400;
+    color: #777;
+}
+
+/* *Footer */
+
+footer{
+    padding: var(--sec-padding);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+    color: #fff;
+    text-align: center;    
+}
+
+footer h2{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+footer i{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+footer span{
+    color: #10cab7;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 992px) {
+    .hero::before, .hero::after{
+        display: none;
+    }
+
+    nav{
+        border: none;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        z-index: 1111;
+    }
+
+    nav ul:hover{
+        display: block;
+    }
+
+    nav ul li{
+        height: auto;
+        padding: 20px 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    nav ul li:last-of-type{
+        margin: 0;
+        border: none;
+    }
+
+    .menu{
+        display: block;
+    }
+
+    .menu:hover + ul{
+        display: block;
+    }
+
+    .hero-div{
+        width: 100%;
+    }
+
+    .services .content{
+        flex-direction: column;
+    }
+
+    .services .cell{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cell i{
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .features{
+        z-index: 1;
+    }
+
+    .features img{
+        display: none;
+    }
+
+    .features .overlay{
+        width: 100%;
+        padding-left: 70px;
+    }
+
+    .portfolio .images > div{
+        width: 50%;
+    }
+
+    .about img{
+        width: 80%;
+        bottom: -90px;
+    }
+    .stats .content{
+        flex-direction: column;
+    }
+
+    .content .box{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .cols{
+        flex-direction: column;
+        align-items: center;
+    }   
+    
+    .cols .col{
+        width: calc( 100% - 20px);
+
+    }
+
+    .sub-cont{
+        flex-direction: column;
+    }
+
+    .email{
+        margin-bottom: 40px;
+    }
+
+    .email, .sub-cont p{
+        width: 100%;
+        text-align: center;
+    }
+
+
+    form{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    form a{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .contact .content .text{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .text-row{
+        text-align: center;
+    }
+
+  }
+
+  @media only screen and (max-width: 550px){
+    :root{
+        font-size: 14px;
+    }
+
+    .portfolio .images > div{
+        width: 100%;
+    }
+
+  }
